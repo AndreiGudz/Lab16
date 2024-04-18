@@ -1,0 +1,3 @@
+C:/Users/andre/CLionProjects/Pr16/cmake-build-debug/CMakeFiles/Pr16.dir
+C:/Users/andre/CLionProjects/Pr16/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/andre/CLionProjects/Pr16/cmake-build-debug/CMakeFiles/rebuild_cache.dir

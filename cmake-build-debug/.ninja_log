@@ -1,0 +1,13 @@
+# ninja log v5
+10	134	7351398379952141	CMakeFiles/Pr16.dir/main.c.obj	3f925465d4ee60cd
+18	137	7351398380002141	CMakeFiles/Pr16.dir/StudentStruct.c.obj	1acad75e99fd84de
+1	148	7351398380112796	CMakeFiles/Pr16.dir/CreateLoadStudents.c.obj	5f48d0eaf0c8f6a7
+14	150	7351398380122780	CMakeFiles/Pr16.dir/ListStruct.c.obj	84070bc677405135
+150	316	7351398381687961	Pr16.exe	aaf7bbe371998e7e
+13	157	7351417232222293	CMakeFiles/Pr16.dir/StudentStruct.c.obj	1acad75e99fd84de
+18	159	7351417232242283	CMakeFiles/Pr16.dir/ListStruct.c.obj	84070bc677405135
+3	161	7351417232282288	CMakeFiles/Pr16.dir/CreateLoadStudents.c.obj	5f48d0eaf0c8f6a7
+9	169	7351417232342279	CMakeFiles/Pr16.dir/main.c.obj	3f925465d4ee60cd
+169	275	7351417233364739	Pr16.exe	aaf7bbe371998e7e
+6	197	7351420695596113	CMakeFiles/Pr16.dir/CreateLoadStudents.c.obj	5f48d0eaf0c8f6a7
+198	327	7351420696833852	Pr16.exe	aaf7bbe371998e7e
