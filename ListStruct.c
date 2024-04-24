@@ -4,6 +4,8 @@
 
 #include <stdio.h>
 #include <malloc.h>
+#include <errno.h>
+#include <string.h>
 #include "ListStruct.h"
 
 void* appendStudent(void*);
@@ -11,7 +13,12 @@ void* studentPrintInList(void*);
 void* (printAllList)(void*);
 
 void* (listInit)(void*){
+    errno_t my_error = errno;
     List* list = malloc(sizeof(List));
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     list->head = NULL;
     list->tail = NULL;
     list->size = 0;
@@ -22,9 +29,14 @@ void* (listInit)(void*){
 }
 
 void* appendStudent(void* _list){
+    errno_t my_error = errno;
     List* list = _list;
     Node* student = malloc(sizeof(Node));
     student->node_student = malloc(sizeof(Student));
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     studentFill(student->node_student);
     student->next = NULL;
 
@@ -40,6 +52,7 @@ void* appendStudent(void* _list){
 }
 
 void* (printAllList)(void* _list){
+    errno_t my_error = errno;
     List* list = _list;
     Args* args = malloc(sizeof(Args) );
     args->list = list;
@@ -47,10 +60,15 @@ void* (printAllList)(void* _list){
         printf("%d ", args->count + 1);
         args->list->print(args);
     }
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }
 
 void* studentPrintInList(void* _args){
+    errno_t my_error = errno;
     Args* args = _args;
     if (args->count < 0 || args->count >= args->list->size)
         return NULL;
@@ -66,11 +84,16 @@ void* studentPrintInList(void* _args){
         }
         i++;
     }
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }
 
 
 void* topTenInMath(void* _list){
+    errno_t my_error = errno;
     List* list = _list;
     int top_in_math;
     if (list->size > 10)
@@ -95,5 +118,9 @@ void* topTenInMath(void* _list){
                 position_in_top += 1;
             }
         }
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }

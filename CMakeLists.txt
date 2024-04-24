@@ -7,4 +7,4 @@ add_executable(Pr16 main.c
         CreateLoadStudents.h CreateLoadStudents.c
         StudentStruct.h StudentStruct.c
         ListStruct.h ListStruct.c
-        )
+    )

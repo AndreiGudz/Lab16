@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <memory.h>
+#include <string.h>
 #include "ListStruct.h"
 #include "CreateLoadStudents.h"
 
@@ -14,6 +15,7 @@
 void* (SaveStudents)(void*);
 
 void* (CreateStudents)(void*){
+    errno_t my_error = errno;
     SRandom;
     List* list = list(NULL);
     int count = 0;
@@ -39,18 +41,28 @@ void* (CreateStudents)(void*){
     if (save_file == 'y'){
         SaveStudents(list);
     }
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return list;
 }
 
 void* (LoadStudents)(void*){
+    errno_t my_error = errno;
     FILE* my_file = fopen("students_file.bin", "rb");
     if(my_file == NULL){
-        printf("Файл students_file.bin не существует!\n");
-        exit(-1);
+        printf("Файл students_file.bin не существует!\n %s\n", strerror(my_error));
+        perror("Файл students_file.bin не существует!");
+        exit(my_error);
     }
 
     List* list = list(NULL);
     fread(&(list->size), sizeof(int), 1, my_file);
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     for (int i = 0 ; i < list->size; i++){
         Node* student = malloc(sizeof(Node) );
         student->node_student = malloc(sizeof(Student) );
@@ -76,15 +88,21 @@ void* (LoadStudents)(void*){
     }
     fclose(my_file);
     list->printAll(list);
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return list;
 }
 
 void* (SaveStudents)(void* _list){
+    errno_t my_error = errno;
     List* list = _list;
     FILE* my_file = fopen("students_file.bin", "wb");
     if(my_file == NULL){
-        printf("Файл students_file.bin не существует!\n");
-        exit(-1);
+        printf("%s\n", strerror(my_error));
+        perror("Файл students_file.bin не был создан");
+        exit(my_error);
     }
 
 //    int i = 0;
@@ -105,6 +123,10 @@ void* (SaveStudents)(void* _list){
         fwrite(&(student->physics_grade), sizeof(int), 1, my_file);
     }
     fclose(my_file);
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }
 

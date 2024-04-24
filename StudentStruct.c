@@ -37,6 +37,7 @@ void* studentPrint(void*);
 void* studentPrintInList(void*);
 
 void* studentFillName(void* _student){
+    errno_t my_error = errno;
     Student* student = _student;
     strcpy(student->name,names[rand()%10]);
     strcpy(student->last_name, last_names[rand() % 10]);
@@ -47,19 +48,33 @@ void* studentFillName(void* _student){
     student->chemistry_grade = rand() % 4 + 2;
     student->physics_grade = rand() % 4 + 2;
     student->print = studentPrint;
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }
 
 void* studentFillFunction(void* _student){
+    errno_t my_error = errno;
     Student* student = _student;
     student->print = studentPrint;
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }
 
 void* studentPrint(void* _student){
+    errno_t my_error = errno;
     Student* student = _student;
     printf("\t Student %s %s ", student->name, student->last_name);
     printf("Grade %d\n", student->mathematics_grade);
+    if (my_error != 0){
+        printf("%s\n", strerror(my_error));
+        exit(my_error);
+    }
     return NULL;
 }
 
