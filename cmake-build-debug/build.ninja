@@ -51,25 +51,25 @@ build cmake_object_order_depends_target_Pr16: phony || CMakeFiles/Pr16.dir
 
 build CMakeFiles/Pr16.dir/main.c.obj: C_COMPILER__Pr16_Debug C$:/Users/andre/CLionProjects/Pr16/main.c || cmake_object_order_depends_target_Pr16
   DEP_FILE = CMakeFiles\Pr16.dir\main.c.obj.d
-  FLAGS = -g -std=gnu11
+  FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Pr16.dir
   OBJECT_FILE_DIR = CMakeFiles\Pr16.dir
 
 build CMakeFiles/Pr16.dir/CreateLoadStudents.c.obj: C_COMPILER__Pr16_Debug C$:/Users/andre/CLionProjects/Pr16/CreateLoadStudents.c || cmake_object_order_depends_target_Pr16
   DEP_FILE = CMakeFiles\Pr16.dir\CreateLoadStudents.c.obj.d
-  FLAGS = -g -std=gnu11
+  FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Pr16.dir
   OBJECT_FILE_DIR = CMakeFiles\Pr16.dir
 
 build CMakeFiles/Pr16.dir/StudentStruct.c.obj: C_COMPILER__Pr16_Debug C$:/Users/andre/CLionProjects/Pr16/StudentStruct.c || cmake_object_order_depends_target_Pr16
   DEP_FILE = CMakeFiles\Pr16.dir\StudentStruct.c.obj.d
-  FLAGS = -g -std=gnu11
+  FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Pr16.dir
   OBJECT_FILE_DIR = CMakeFiles\Pr16.dir
 
 build CMakeFiles/Pr16.dir/ListStruct.c.obj: C_COMPILER__Pr16_Debug C$:/Users/andre/CLionProjects/Pr16/ListStruct.c || cmake_object_order_depends_target_Pr16
   DEP_FILE = CMakeFiles\Pr16.dir\ListStruct.c.obj.d
-  FLAGS = -g -std=gnu11
+  FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Pr16.dir
   OBJECT_FILE_DIR = CMakeFiles\Pr16.dir
 

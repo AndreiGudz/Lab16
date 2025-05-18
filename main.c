@@ -16,10 +16,9 @@ int main()
 
     List* list = list(NULL);
 
-    if (create_file == 'y')
-        list = LoadStudents(NULL);
-    else
-        list = CreateStudents(NULL);
+    list = (create_file == 'y')
+            ? LoadStudents(NULL)
+            : CreateStudents(NULL);
 
     MathTop(list);
     if (my_error != 0){

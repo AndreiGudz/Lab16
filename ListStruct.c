@@ -6,6 +6,7 @@
 #include <malloc.h>
 #include <errno.h>
 #include <string.h>
+#include <math.h>
 #include "ListStruct.h"
 
 void* appendStudent(void*);
@@ -42,7 +43,7 @@ void* appendStudent(void* _list){
 
     if(list->size == 0){
         list->head = student;
-        list->tail = list->head;
+        list->tail = student;
     } else{
         list->tail->next = student;
         list->tail = student;
@@ -60,6 +61,7 @@ void* (printAllList)(void* _list){
         printf("%d ", args->count + 1);
         args->list->print(args);
     }
+    free(args);
     if (my_error != 0){
         printf("%s\n", strerror(my_error));
         exit(my_error);
@@ -95,11 +97,7 @@ void* studentPrintInList(void* _args){
 void* topTenInMath(void* _list){
     errno_t my_error = errno;
     List* list = _list;
-    int top_in_math;
-    if (list->size > 10)
-        top_in_math = 10;
-    else
-        top_in_math = (int) list->size;
+    int top_in_math = list->size > 10 ? 10 : (int) list->size;
 
     int position_in_top = 1;
     for (
